@@ -153,7 +153,6 @@
             justify-content: center;
         }
 
-        /* *** ԱՅՍՏԵՂ Է ՄԻԱՅՆ ՁԵՐ ԼՈՒՍԱՆԿԱՐԻ ՏԵՂԸ *** */
         .hero-right img {
             width: 90%;
             height: 95%;
@@ -194,7 +193,7 @@
             z-index: 3;
         }
 
-        /* --- 2. ՍԵԿՑԻԱ (ABOUT - HELLO I AM) --- */
+        /* --- 2. ՍԵԿՑԻԱ (ABOUT) --- */
         .about {
             background-color: #f8f9fa;
         }
@@ -413,7 +412,147 @@
         }
 
         /* ========================================= */
-        /* *** ՆՈՐ ՍԵԿՑԻԱ. ԿԱՊ ՄԵԶ ՀԵՏ (CONTACT) *** */
+        /* *** ՍԵԿՑԻԱ. ՄԵՐ ԱՇԽԱՏԱՆՔՆԵՐԸ (WORKS) *** */
+        /* ========================================= */
+        .works {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 40px;
+            background: linear-gradient(160deg, #0b2545 0%, #1a3b6e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .works .script-title {
+            color: #8ab4f8;
+        }
+
+        .works .bold-title {
+            color: white;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .works .subtitle {
+            color: #8ab4f8;
+            margin-bottom: 50px;
+        }
+
+        /* --- Աշխատանքների ցանց --- */
+        .works-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        .work-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Սլայդեր Before / After --- */
+        .before-after-slider {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            user-select: none;
+            cursor: ew-resize;
+        }
+
+        .before-after-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .before-after-slider .img-after {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #8ab4f8;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(138, 180, 248, 0.8);
+        }
+
+        .slider-handle::after {
+            content: '⇔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #8ab4f8;
+            color: #0b2545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            box-shadow: 0 0 20px rgba(138, 180, 248, 0.9);
+        }
+
+        .ba-label {
+            position: absolute;
+            top: 15px;
+            padding: 5px 14px;
+            background: rgba(11, 37, 69, 0.85);
+            color: #8ab4f8;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            z-index: 5;
+        }
+
+        .ba-label.before {
+            left: 15px;
+        }
+
+        .ba-label.after {
+            right: 15px;
+        }
+
+        .work-caption {
+            margin-top: 18px;
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .work-caption span {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #8ab4f8;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* ========================================= */
+        /* *** ՍԵԿՑԻԱ. ԿԱՊ ՄԵԶ ՀԵՏ (CONTACT) *** */
         /* ========================================= */
         .contact {
             display: flex;
@@ -486,7 +625,7 @@
         }
 
         /* ========================================= */
-        /* *** ԱԴԱՊՏԻՎ ԿՈԴ ՀԵՌԱԽՈՍՆԵՐԻ ՀԱՄԱՐ *** */
+        /* *** ԱԴԱՊՏԻՎ ԿՈԴ *** */
         /* ========================================= */
         @media (max-width: 768px) {
             body {
@@ -623,7 +762,25 @@
                 border-radius: 0;
             }
 
-            /* Կոնտակտային բաժնի ադապտացիա */
+            /* Works ադապտացիա */
+            .works {
+                padding: 60px 20px;
+            }
+
+            .works .bold-title {
+                font-size: 32px;
+            }
+
+            .works-gallery {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .before-after-slider {
+                height: 260px;
+            }
+
+            /* Contact ադապտացիա */
             .contact {
                 padding: 60px 20px;
             }
@@ -653,7 +810,7 @@
 
     <div class="portfolio-wrapper">
 
-        <!-- ՍԵԿՑԻԱ 1: PORTFOLIO (Գլխավոր) -->
+        <!-- ՍԵԿՑԻԱ 1: HERO -->
         <section class="section hero animate-on-scroll">
             <div class="hero-left">
                 <span class="script-title">Ստոմատոլոգիա</span>
@@ -663,12 +820,12 @@
             </div>
             <div class="hero-right">
                 <div class="year-badge">2026</div>
-                <!-- *** ԱՅՍՏԵՂ ՏԵՂԱԴՐԵՔ ՁԵՐ ԼՈՒՍԱՆԿԱՐԸ *** -->
+                <!-- *** ՁԵՐ ԼՈՒՍԱՆԿԱՐԸ *** -->
                 <img src="doctor1.jpg" alt="Դր. Էրիկ Զոհրաբյան" class="img-animate">
             </div>
         </section>
 
-        <!-- ՍԵԿՑԻԱ 2: ABOUT (Իմ մասին) -->
+        <!-- ՍԵԿՑԻԱ 2: ABOUT -->
         <section class="section about animate-on-scroll">
             <div class="about-left">
                 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
@@ -696,7 +853,7 @@
             </div>
         </section>
 
-        <!-- ՍԵԿՑԻԱ 3: EDUCATION (Կրթություն) -->
+        <!-- ՍԵԿՑԻԱ 3: EDUCATION -->
         <section class="section education animate-on-scroll">
             <div class="edu-left">
                 <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
@@ -721,7 +878,7 @@
             </div>
         </section>
 
-        <!-- ՍԵԿՑԻԱ 4: WORK EXPERIENCE (Աշխատանքային փորձ) -->
+        <!-- ՍԵԿՑԻԱ 4: EXPERIENCE -->
         <section class="section experience animate-on-scroll">
             <div class="exp-left">
                 <span class="script-title">Իմ</span>
@@ -750,7 +907,86 @@
             </div>
         </section>
 
-        <!-- *** ՆՈՐ ՍԵԿՑԻԱ. ԿԱՊ ՄԵԶ ՀԵՏ (CONTACT) *** -->
+        <!-- *** ՍԵԿՑԻԱ 5: ՄԵՐ ԱՇԽԱՏԱՆՔՆԵՐԸ (WORKS) *** -->
+        <section class="section works animate-on-scroll">
+            <span class="script-title">Մեր</span>
+            <h2 class="bold-title">ԱՇԽԱՏԱՆՔՆԵՐԸ</h2>
+            <div class="subtitle">ԱՐԴՅՈՒՆՔ, ՈՐ ԽՈՍՈՒՄ Է ԻՐ ՄԱՍԻՆ</div>
+
+            <div class="works-gallery">
+
+                <!-- Աշխատանք 1 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 1" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                            alt="After 1" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Իմպլանտացիա
+                        <span>Ամբողջական վերականգնում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 2 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 2" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="After 2" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Էսթետիկ Ռեստավրացիա
+                        <span>Ժպիտի ձևավորում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 3 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 3" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="After 3" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Ժպիտի Դիզայն
+                        <span>Կոսմետիկ ուղղում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 4 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 4" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="After 4" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Վինիրներ
+                        <span>Էսթետիկ վերականգնում</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- *** ՍԵԿՑԻԱ 6: ԿԱՊ ՄԵԶ ՀԵՏ *** -->
         <section class="section contact animate-on-scroll">
             <h2>Կապ մեզ հետ</h2>
             <h3>ԱՄՐԱԳՐՎԵՔ ԶՆՆՈՒԹՅԱՆ</h3>
@@ -758,7 +994,6 @@
                 վերաբերյալ։</p>
 
             <div class="social-links">
-                <!-- *** Instagram կոճակ *** -->
                 <a href="https://www.instagram.com/zohrabyan_dentist/?hl=ru" target="_blank" class="social-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
@@ -766,7 +1001,6 @@
                     </svg>
                     Instagram
                 </a>
-                <!-- *** Հեռախոսի կոճակ *** -->
                 <a href="tel:+374XXXXXXXX" class="social-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
@@ -779,7 +1013,7 @@
 
     </div>
 
-    <!-- *** JavaScript ԱՆԻՄԱՑԻԱՆԵՐԻ ՀԱՄԱՐ (ԿՐԿՆՎՈՂ) *** -->
+    <!-- *** JavaScript ԱՆԻՄԱՑԻԱՆԵՐ *** -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const animatedElements = document.querySelectorAll('.animate-on-scroll, .img-animate');
@@ -798,6 +1032,53 @@
             });
 
             animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- *** JavaScript ԲՈԼՈՐ ՍԼԱՅԴԵՐՆԵՐԻ ՀԱՄԱՐ *** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliders = document.querySelectorAll('.before-after-slider');
+
+            sliders.forEach(slider => {
+                const afterImg = slider.querySelector('.img-after');
+                const handle = slider.querySelector('.slider-handle');
+                let isDragging = false;
+
+                function moveSlider(x) {
+                    const rect = slider.getBoundingClientRect();
+                    let position = ((x - rect.left) / rect.width) * 100;
+                    position = Math.max(0, Math.min(100, position));
+                    afterImg.style.clipPath = `inset(0 0 0 ${position}%)`;
+                    handle.style.left = position + '%';
+                }
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    moveSlider(e.clientX);
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    if (isDragging) moveSlider(e.clientX);
+                });
+
+                window.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                slider.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    moveSlider(e.touches[0].clientX);
+                }, { passive: true });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (isDragging) moveSlider(e.touches[0].clientX);
+                }, { passive: true });
+
+                slider.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+            });
         });
     </script>
 
